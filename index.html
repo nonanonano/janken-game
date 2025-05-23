@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>janken-pon</title>
+    <title>Janken Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .buttons button {
+            font-size: 1.2em;
+            margin: 5px;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 <body>
-     <h1>Hello, GitHub Beginners!</h1>
+    <h1>Let's play Janken!</h1>
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <p id="result"></p>
     <script src="script.js"></script>
 </body>
 </html>
