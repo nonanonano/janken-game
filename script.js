@@ -10,6 +10,14 @@ const imageMap = {
     scissors: 'aite-choki.png'
 };
 
+function resetGame() {
+    document.getElementById('opponent-image').style.display = 'none';
+    document.getElementById('opponent-image').src = '';
+    document.getElementById('result').textContent = '';
+    document.getElementById('next-game').style.display = 'none';
+    document.querySelector('.buttons').style.display = 'block';
+}
+
 function playRound(playerSelection) {
     const computerSelection = computerPlay();
     let result;
@@ -32,8 +40,13 @@ function playRound(playerSelection) {
 
     const resultEl = document.getElementById('result');
     resultEl.textContent = result;
+
+    document.querySelector('.buttons').style.display = 'none';
+    document.getElementById('next-game').style.display = 'inline-block';
 }
 
 ['rock', 'paper', 'scissors'].forEach(id => {
     document.getElementById(id).addEventListener('click', () => playRound(id));
 });
+
+document.getElementById('next-game').addEventListener('click', resetGame);
